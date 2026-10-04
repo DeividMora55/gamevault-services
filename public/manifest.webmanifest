@@ -1,0 +1,18 @@
+{
+  "name": "GameVault Services",
+  "short_name": "GameVault",
+  "description": "Plataforma gamer orientada a servicios.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#07040f",
+  "theme_color": "#0b0617",
+  "lang": "es-MX",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

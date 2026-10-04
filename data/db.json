@@ -1,0 +1,356 @@
+{
+  "profile": {
+    "id": "U001",
+    "name": "Jose David Morales",
+    "nickname": "JDMM",
+    "level": 27,
+    "xp": 6840,
+    "nextLevelXp": 7500,
+    "rank": "Platinum Explorer",
+    "bio": "Jugador, coleccionista y creador de estrategias.",
+    "favoriteGenre": "RPG"
+  },
+  "games": [
+    {
+      "id": "G001",
+      "title": "Nebula Vanguard",
+      "genre": "RPG",
+      "platform": "PC",
+      "rating": 4.9,
+      "price": 799,
+      "releaseYear": 2026,
+      "accent": "#8b5cf6",
+      "description": "RPG de ciencia ficción con exploración galáctica, facciones y combate táctico.",
+      "cover": "nebula",
+      "tags": [
+        "RPG",
+        "Sci‑Fi",
+        "Historia"
+      ],
+      "players": "1 jugador"
+    },
+    {
+      "id": "G002",
+      "title": "Circuit Breakers X",
+      "genre": "Carreras",
+      "platform": "PC / Xbox",
+      "rating": 4.7,
+      "price": 649,
+      "releaseYear": 2025,
+      "accent": "#06b6d4",
+      "description": "Carreras futuristas de alta velocidad con ligas competitivas y personalización avanzada.",
+      "cover": "circuit",
+      "tags": [
+        "Carreras",
+        "Competitivo",
+        "Online"
+      ],
+      "players": "1–12 jugadores"
+    },
+    {
+      "id": "G003",
+      "title": "Kingdoms of Ember",
+      "genre": "Estrategia",
+      "platform": "PC",
+      "rating": 4.8,
+      "price": 729,
+      "releaseYear": 2026,
+      "accent": "#f97316",
+      "description": "Construye un reino, gestiona recursos y conquista territorios en campañas dinámicas.",
+      "cover": "ember",
+      "tags": [
+        "Estrategia",
+        "Gestión",
+        "Campaña"
+      ],
+      "players": "1–8 jugadores"
+    },
+    {
+      "id": "G004",
+      "title": "Echo Protocol",
+      "genre": "Acción",
+      "platform": "PC / PlayStation",
+      "rating": 4.6,
+      "price": 899,
+      "releaseYear": 2026,
+      "accent": "#ec4899",
+      "description": "Acción táctica cyberpunk con infiltración, decisiones narrativas y misiones cooperativas.",
+      "cover": "echo",
+      "tags": [
+        "Acción",
+        "Cyberpunk",
+        "Coop"
+      ],
+      "players": "1–4 jugadores"
+    },
+    {
+      "id": "G005",
+      "title": "Mythic Arena",
+      "genre": "MOBA",
+      "platform": "PC",
+      "rating": 4.5,
+      "price": 0,
+      "releaseYear": 2024,
+      "accent": "#22c55e",
+      "description": "Batallas competitivas 5v5 con héroes míticos, temporadas y eventos clasificatorios.",
+      "cover": "mythic",
+      "tags": [
+        "MOBA",
+        "Esports",
+        "Gratis"
+      ],
+      "players": "10 jugadores"
+    },
+    {
+      "id": "G006",
+      "title": "Hollow Signal",
+      "genre": "Terror",
+      "platform": "PC / PlayStation",
+      "rating": 4.4,
+      "price": 499,
+      "releaseYear": 2025,
+      "accent": "#ef4444",
+      "description": "Terror psicológico de exploración con acertijos, señales extrañas y múltiples finales.",
+      "cover": "hollow",
+      "tags": [
+        "Terror",
+        "Puzzle",
+        "Narrativa"
+      ],
+      "players": "1 jugador"
+    },
+    {
+      "id": "G007",
+      "title": "Skyforge Tactics",
+      "genre": "Táctico",
+      "platform": "PC / Switch",
+      "rating": 4.8,
+      "price": 589,
+      "releaseYear": 2026,
+      "accent": "#3b82f6",
+      "description": "Combate táctico por turnos con escuadrones personalizables y mapas generados dinámicamente.",
+      "cover": "skyforge",
+      "tags": [
+        "Táctico",
+        "Turnos",
+        "Roguelite"
+      ],
+      "players": "1 jugador"
+    },
+    {
+      "id": "G008",
+      "title": "Pixel Harvest",
+      "genre": "Simulación",
+      "platform": "PC / Switch",
+      "rating": 4.7,
+      "price": 329,
+      "releaseYear": 2025,
+      "accent": "#eab308",
+      "description": "Simulador relajante de granja con comercio, decoración, amistad y eventos de temporada.",
+      "cover": "harvest",
+      "tags": [
+        "Simulación",
+        "Casual",
+        "Cozy"
+      ],
+      "players": "1–4 jugadores"
+    }
+  ],
+  "library": [
+    {
+      "gameId": "G001",
+      "status": "Jugando",
+      "hours": 42,
+      "progress": 68,
+      "lastPlayed": "2026-09-28"
+    },
+    {
+      "gameId": "G005",
+      "status": "Jugando",
+      "hours": 87,
+      "progress": 52,
+      "lastPlayed": "2026-09-27"
+    },
+    {
+      "gameId": "G008",
+      "status": "Completado",
+      "hours": 33,
+      "progress": 100,
+      "lastPlayed": "2026-09-20"
+    }
+  ],
+  "wishlist": [
+    "G004",
+    "G007"
+  ],
+  "achievements": [
+    {
+      "id": "A001",
+      "gameId": "G001",
+      "name": "Primer Salto",
+      "description": "Completa tu primera misión interestelar.",
+      "points": 50,
+      "unlocked": true,
+      "rarity": "Común"
+    },
+    {
+      "id": "A002",
+      "gameId": "G001",
+      "name": "Cartógrafo Estelar",
+      "description": "Descubre 20 sistemas.",
+      "points": 120,
+      "unlocked": true,
+      "rarity": "Raro"
+    },
+    {
+      "id": "A003",
+      "gameId": "G001",
+      "name": "Leyenda del Vacío",
+      "description": "Derrota al comandante final sin perder una nave.",
+      "points": 300,
+      "unlocked": false,
+      "rarity": "Legendario"
+    },
+    {
+      "id": "A004",
+      "gameId": "G005",
+      "name": "Triple Eliminación",
+      "description": "Consigue tres eliminaciones en 10 segundos.",
+      "points": 80,
+      "unlocked": true,
+      "rarity": "Poco común"
+    },
+    {
+      "id": "A005",
+      "gameId": "G005",
+      "name": "Maestro de Temporada",
+      "description": "Alcanza rango Diamante.",
+      "points": 250,
+      "unlocked": false,
+      "rarity": "Épico"
+    },
+    {
+      "id": "A006",
+      "gameId": "G008",
+      "name": "Granja Perfecta",
+      "description": "Alcanza 100% de progreso.",
+      "points": 180,
+      "unlocked": true,
+      "rarity": "Raro"
+    }
+  ],
+  "tournaments": [
+    {
+      "id": "T001",
+      "name": "Mythic Arena Open",
+      "gameId": "G005",
+      "date": "2026-10-05",
+      "time": "18:00",
+      "prize": "$15,000 MXN",
+      "slots": 64,
+      "registered": 49,
+      "status": "Inscripciones abiertas"
+    },
+    {
+      "id": "T002",
+      "name": "Circuit Masters",
+      "gameId": "G002",
+      "date": "2026-10-12",
+      "time": "20:00",
+      "prize": "$8,000 MXN",
+      "slots": 32,
+      "registered": 28,
+      "status": "Inscripciones abiertas"
+    },
+    {
+      "id": "T003",
+      "name": "Skyforge Tactical Cup",
+      "gameId": "G007",
+      "date": "2026-10-19",
+      "time": "17:30",
+      "prize": "$12,000 MXN",
+      "slots": 24,
+      "registered": 24,
+      "status": "Cupo lleno"
+    }
+  ],
+  "registrations": [
+    {
+      "tournamentId": "T001",
+      "userId": "U001",
+      "registeredAt": "2026-09-26T18:40:00"
+    }
+  ],
+  "reviews": [
+    {
+      "id": "R001",
+      "gameId": "G001",
+      "user": "NovaRider",
+      "rating": 5,
+      "text": "La exploración y el sistema de facciones están increíbles.",
+      "createdAt": "2026-09-26T12:30:00"
+    },
+    {
+      "id": "R002",
+      "gameId": "G005",
+      "user": "ArcadeFox",
+      "rating": 4,
+      "text": "Buen competitivo, aunque algunas partidas son intensas.",
+      "createdAt": "2026-09-25T20:10:00"
+    },
+    {
+      "id": "R003",
+      "gameId": "G008",
+      "user": "CozyByte",
+      "rating": 5,
+      "text": "Perfecto para relajarse y jugar con amigos.",
+      "createdAt": "2026-09-24T09:15:00"
+    }
+  ],
+  "notifications": [
+    {
+      "id": "N001",
+      "type": "tournament",
+      "title": "Torneo próximo",
+      "text": "Mythic Arena Open inicia en 7 días.",
+      "read": false,
+      "createdAt": "2026-09-28T18:30:00"
+    },
+    {
+      "id": "N002",
+      "type": "achievement",
+      "title": "Nuevo logro",
+      "text": "Desbloqueaste Cartógrafo Estelar.",
+      "read": false,
+      "createdAt": "2026-09-28T17:10:00"
+    },
+    {
+      "id": "N003",
+      "type": "library",
+      "title": "Biblioteca actualizada",
+      "text": "Pixel Harvest alcanzó 100% de progreso.",
+      "read": true,
+      "createdAt": "2026-09-27T21:00:00"
+    }
+  ],
+  "activity": [
+    {
+      "id": "EV001",
+      "type": "achievement",
+      "text": "Desbloqueaste “Cartógrafo Estelar” en Nebula Vanguard.",
+      "createdAt": "2026-09-28T17:10:00"
+    },
+    {
+      "id": "EV002",
+      "type": "tournament",
+      "text": "Te registraste en Mythic Arena Open.",
+      "createdAt": "2026-09-26T18:40:00"
+    },
+    {
+      "id": "EV003",
+      "type": "library",
+      "text": "Agregaste Nebula Vanguard a tu biblioteca.",
+      "createdAt": "2026-09-20T13:10:00"
+    }
+  ]
+}

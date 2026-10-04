@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0b0617" />
+  <meta name="description" content="GameVault Services - plataforma gamer orientada a servicios." />
+  <title>GameVault Services</title>
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="icon" href="icon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="noise"></div>
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="brand-mark">GV</div>
+      <div>
+        <strong>GameVault</strong>
+        <span>Services</span>
+      </div>
+    </div>
+
+    <nav class="side-nav">
+      <button class="nav-btn active" data-view="dashboard"><span>◈</span> Inicio</button>
+      <button class="nav-btn" data-view="discover"><span>⌘</span> Descubrir</button>
+      <button class="nav-btn" data-view="library"><span>▣</span> Biblioteca</button>
+      <button class="nav-btn" data-view="achievements"><span>★</span> Logros</button>
+      <button class="nav-btn" data-view="tournaments"><span>♛</span> Torneos</button>
+      <button class="nav-btn" data-view="community"><span>☷</span> Comunidad</button>
+      <button class="nav-btn" data-view="services"><span>⌁</span> Servicios API</button>
+    </nav>
+
+    <div class="sidebar-profile" id="sidebarProfile"></div>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow" id="pageEyebrow">GAMEVAULT SERVICES</p>
+        <h1 id="pageTitle">Centro de mando</h1>
+      </div>
+      <div class="top-actions">
+        <button id="notificationBtn" class="icon-action">🔔 <span id="notifCount" class="notif-badge">0</span></button>
+        <button id="profileBtn" class="profile-chip"><span class="mini-avatar">JD</span><span id="topNickname">JDMM</span></button>
+      </div>
+    </header>
+
+    <section id="dashboardView" class="view active">
+      <article class="hero">
+        <div class="hero-copy">
+          <span class="season-badge">TEMPORADA 08 · VOID RISING</span>
+          <h2>Tu universo gamer, conectado por servicios.</h2>
+          <p>Explora juegos, administra tu biblioteca, desbloquea logros, participa en torneos y comparte reseñas desde una plataforma modular orientada a servicios.</p>
+          <div class="hero-actions">
+            <button class="btn primary" data-go="discover">Explorar catálogo</button>
+            <button class="btn glass" data-go="tournaments">Ver torneos</button>
+          </div>
+        </div>
+        <div class="hero-art">
+          <div class="planet"></div>
+          <div class="ring r1"></div>
+          <div class="ring r2"></div>
+          <div class="floating-card fc1">+250 XP</div>
+          <div class="floating-card fc2">Rank: Platinum</div>
+          <div class="floating-card fc3">3 juegos activos</div>
+        </div>
+      </article>
+
+      <div id="statsGrid" class="stats-grid"></div>
+
+      <div class="dashboard-grid">
+        <article class="panel">
+          <div class="panel-head">
+            <div><span class="section-kicker">CONTINUAR JUGANDO</span><h3>Biblioteca activa</h3></div>
+            <button class="text-btn" data-go="library">Ver biblioteca →</button>
+          </div>
+          <div id="continuePlaying" class="continue-list"></div>
+        </article>
+
+        <article class="panel">
+          <div class="panel-head">
+            <div><span class="section-kicker">PERFIL</span><h3>Progreso de jugador</h3></div>
+          </div>
+          <div id="profileProgress"></div>
+        </article>
+      </div>
+
+      <div class="dashboard-grid">
+        <article class="panel">
+          <div class="panel-head"><div><span class="section-kicker">ACTIVIDAD</span><h3>Actividad reciente</h3></div></div>
+          <div id="activityFeed" class="timeline"></div>
+        </article>
+        <article class="panel">
+          <div class="panel-head"><div><span class="section-kicker">EVENTOS</span><h3>Próximos torneos</h3></div><button class="text-btn" data-go="tournaments">Explorar →</button></div>
+          <div id="dashboardTournaments" class="mini-tournament-list"></div>
+        </article>
+      </div>
+    </section>
+
+    <section id="discoverView" class="view">
+      <div class="section-intro">
+        <div><p class="eyebrow">CATALOG SERVICE</p><h2>Descubre tu próximo juego</h2><p>El catálogo se obtiene mediante un servicio independiente y puede filtrarse sin afectar otros módulos.</p></div>
+        <div class="endpoint-pill">GET /api/games</div>
+      </div>
+      <div class="filters">
+        <input id="gameSearch" type="search" placeholder="Buscar por título, género o etiqueta..." />
+        <select id="genreFilter"><option>Todos</option><option>RPG</option><option>Acción</option><option>Estrategia</option><option>Carreras</option><option>MOBA</option><option>Terror</option><option>Táctico</option><option>Simulación</option></select>
+        <select id="platformFilter"><option>Todas</option><option>PC</option><option>PlayStation</option><option>Xbox</option><option>Switch</option></select>
+      </div>
+      <div id="gameGrid" class="game-grid"></div>
+    </section>
+
+    <section id="libraryView" class="view">
+      <div class="section-intro">
+        <div><p class="eyebrow">LIBRARY SERVICE</p><h2>Mi biblioteca</h2><p>Actualiza horas, progreso y estado de cada juego. Los cambios se guardan en el servicio de biblioteca.</p></div>
+        <div class="endpoint-pill">GET /api/library</div>
+      </div>
+      <div id="libraryGrid" class="library-grid"></div>
+
+      <article class="panel wishlist-panel">
+        <div class="panel-head"><div><span class="section-kicker">LISTA DE DESEOS</span><h3>Juegos que sigo</h3></div><span class="endpoint-mini">GET /api/wishlist</span></div>
+        <div id="wishlistList" class="wishlist-list"></div>
+      </article>
+    </section>
+
+    <section id="achievementsView" class="view">
+      <div class="section-intro">
+        <div><p class="eyebrow">ACHIEVEMENT SERVICE</p><h2>Logros y recompensas</h2><p>Consulta logros por juego y simula desbloqueos para observar cómo un servicio actualiza XP, notificaciones y actividad.</p></div>
+        <div class="endpoint-pill">GET /api/achievements</div>
+      </div>
+      <div id="achievementSummary" class="achievement-summary"></div>
+      <div id="achievementGrid" class="achievement-grid"></div>
+    </section>
+
+    <section id="tournamentsView" class="view">
+      <div class="section-intro">
+        <div><p class="eyebrow">TOURNAMENT SERVICE</p><h2>Arena competitiva</h2><p>Consulta eventos, cupos, premios y registra tu participación desde un servicio especializado.</p></div>
+        <div class="endpoint-pill">GET /api/tournaments</div>
+      </div>
+      <div id="tournamentGrid" class="tournament-grid"></div>
+    </section>
+
+    <section id="communityView" class="view">
+      <div class="section-intro">
+        <div><p class="eyebrow">REVIEW SERVICE</p><h2>Comunidad y reseñas</h2><p>Comparte opiniones y consulta reseñas generadas por otros jugadores.</p></div>
+        <div class="endpoint-pill">POST /api/reviews</div>
+      </div>
+
+      <div class="community-layout">
+        <article class="panel review-form-panel">
+          <div class="panel-head"><div><span class="section-kicker">NUEVA RESEÑA</span><h3>Publicar opinión</h3></div></div>
+          <label>Juego<select id="reviewGame"></select></label>
+          <label>Calificación<select id="reviewRating"><option value="5">★★★★★ · 5</option><option value="4">★★★★☆ · 4</option><option value="3">★★★☆☆ · 3</option><option value="2">★★☆☆☆ · 2</option><option value="1">★☆☆☆☆ · 1</option></select></label>
+          <label>Reseña<textarea id="reviewText" placeholder="¿Qué te pareció el juego?"></textarea></label>
+          <button id="publishReviewBtn" class="btn primary full">Publicar reseña</button>
+        </article>
+        <div>
+          <div class="panel-head community-title"><div><span class="section-kicker">FEED</span><h3>Opiniones recientes</h3></div></div>
+          <div id="reviewFeed" class="review-feed"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="servicesView" class="view">
+      <div class="services-hero">
+        <p class="eyebrow">ARQUITECTURA ORIENTADA A SERVICIOS</p>
+        <h2>Una plataforma gamer compuesta por servicios especializados.</h2>
+        <p>La interfaz web consume una API REST. Cada dominio —catálogo, biblioteca, logros, torneos, reseñas, perfil, notificaciones y analítica— tiene lógica separada y responsabilidades claras.</p>
+      </div>
+
+      <div class="architecture">
+        <div class="arch-node client-node"><small>CLIENTE</small><strong>Web SPA</strong><span>HTML · CSS · JS</span></div>
+        <div class="arch-arrow">HTTP / JSON →</div>
+        <div class="arch-node gateway-node"><small>API</small><strong>REST Gateway</strong><span>Node.js</span></div>
+        <div class="arch-arrow">→</div>
+        <div class="service-cloud">
+          <div>Catalog Service</div>
+          <div>Library Service</div>
+          <div>Achievement Service</div>
+          <div>Tournament Service</div>
+          <div>Review Service</div>
+          <div>Profile Service</div>
+          <div>Notification Service</div>
+          <div>Analytics Service</div>
+        </div>
+        <div class="arch-arrow">→</div>
+        <div class="arch-node data-node"><small>DATOS</small><strong>JSON Store</strong><span>db.json</span></div>
+      </div>
+
+      <div class="service-cards">
+        <article><span>01</span><h3>Catalog Service</h3><p>Gestiona búsqueda, filtros y consulta del catálogo de videojuegos.</p></article>
+        <article><span>02</span><h3>Library Service</h3><p>Administra biblioteca, progreso, horas jugadas y lista de deseos.</p></article>
+        <article><span>03</span><h3>Achievement Service</h3><p>Consulta y desbloquea logros; actualiza XP y actividad.</p></article>
+        <article><span>04</span><h3>Tournament Service</h3><p>Controla torneos, cupos, registros y cancelaciones.</p></article>
+        <article><span>05</span><h3>Review Service</h3><p>Publica y consulta reseñas de la comunidad.</p></article>
+        <article><span>06</span><h3>Profile Service</h3><p>Gestiona información del perfil gamer.</p></article>
+        <article><span>07</span><h3>Notification Service</h3><p>Centraliza eventos y notificaciones de otros servicios.</p></article>
+        <article><span>08</span><h3>Analytics Service</h3><p>Calcula métricas globales sin modificar los datos de otros módulos.</p></article>
+      </div>
+
+      <article class="panel api-panel">
+        <div class="panel-head">
+          <div><span class="section-kicker">CONTRATO REST</span><h3>Endpoints implementados</h3></div>
+          <button id="testHealthBtn" class="btn glass-dark">Probar /api/health</button>
+        </div>
+        <div class="api-table-wrap">
+          <table class="api-table">
+            <thead><tr><th>Método</th><th>Endpoint</th><th>Servicio</th><th>Responsabilidad</th></tr></thead>
+            <tbody>
+              <tr><td><b class="get">GET</b></td><td>/api/games</td><td>Catalog</td><td>Catálogo y filtros</td></tr>
+              <tr><td><b class="get">GET</b></td><td>/api/library</td><td>Library</td><td>Biblioteca del usuario</td></tr>
+              <tr><td><b class="post">POST</b></td><td>/api/library</td><td>Library</td><td>Agregar juego</td></tr>
+              <tr><td><b class="put">PUT</b></td><td>/api/library/:gameId</td><td>Library</td><td>Actualizar progreso</td></tr>
+              <tr><td><b class="get">GET</b></td><td>/api/achievements</td><td>Achievement</td><td>Consultar logros</td></tr>
+              <tr><td><b class="post">POST</b></td><td>/api/achievements/:id/unlock</td><td>Achievement</td><td>Desbloquear logro</td></tr>
+              <tr><td><b class="get">GET</b></td><td>/api/tournaments</td><td>Tournament</td><td>Consultar torneos</td></tr>
+              <tr><td><b class="post">POST</b></td><td>/api/tournaments/:id/register</td><td>Tournament</td><td>Registrar jugador</td></tr>
+              <tr><td><b class="post">POST</b></td><td>/api/reviews</td><td>Review</td><td>Publicar reseña</td></tr>
+              <tr><td><b class="get">GET</b></td><td>/api/dashboard</td><td>Analytics</td><td>Métricas del dashboard</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <pre id="healthResult" class="health-result">Presiona “Probar /api/health” para ejecutar una solicitud real.</pre>
+      </article>
+    </section>
+  </main>
+
+  <dialog id="gameDialog">
+    <div class="modal-shell">
+      <button class="modal-close" data-close="gameDialog">×</button>
+      <div id="gameDialogBody"></div>
+    </div>
+  </dialog>
+
+  <dialog id="libraryDialog">
+    <form id="libraryForm" class="modal-shell">
+      <button type="button" class="modal-close" data-close="libraryDialog">×</button>
+      <p class="eyebrow">LIBRARY SERVICE</p>
+      <h2 id="libraryDialogTitle">Actualizar juego</h2>
+      <input type="hidden" id="libraryGameId" />
+      <label>Estado<select id="libraryStatus"><option>Pendiente</option><option>Jugando</option><option>Pausado</option><option>Completado</option></select></label>
+      <label>Horas jugadas<input id="libraryHours" type="number" min="0" max="9999" /></label>
+      <label>Progreso (%)<input id="libraryProgress" type="number" min="0" max="100" /></label>
+      <button class="btn primary full" type="submit">Guardar cambios</button>
+    </form>
+  </dialog>
+
+  <div id="notificationDrawer" class="drawer">
+    <div class="drawer-head"><div><p class="eyebrow">NOTIFICATION SERVICE</p><h3>Notificaciones</h3></div><button id="closeDrawer" class="drawer-close">×</button></div>
+    <button id="markReadBtn" class="text-btn drawer-read">Marcar todas como leídas</button>
+    <div id="notificationList" class="notification-list"></div>
+  </div>
+
+  <div id="toast" class="toast"></div>
+  <script src="app.js"></script>
+</body>
+</html>
