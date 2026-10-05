@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0b1020" />
+  <title>GameVault Services</title>
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-icon">GV</div>
+        <div>
+          <strong>GameVault</strong>
+          <small>Services</small>
+        </div>
+      </div>
+
+      <nav id="nav">
+        <button class="nav-item active" data-view="dashboard">◈ <span>Dashboard</span></button>
+        <button class="nav-item" data-view="catalog">▦ <span>Catálogo</span></button>
+        <button class="nav-item" data-view="library">▣ <span>Biblioteca</span></button>
+        <button class="nav-item" data-view="wishlist">♡ <span>Deseos</span></button>
+        <button class="nav-item" data-view="achievements">★ <span>Logros</span></button>
+        <button class="nav-item" data-view="tournaments">⚔ <span>Torneos</span></button>
+        <button class="nav-item" data-view="reviews">✎ <span>Reseñas</span></button>
+        <button class="nav-item" data-view="notifications">● <span>Notificaciones</span></button>
+        <button class="nav-item" data-view="analytics">⌁ <span>Analítica</span></button>
+        <button class="nav-item" data-view="profile">◎ <span>Perfil</span></button>
+      </nav>
+
+      <div class="api-box">
+        <span class="status-dot"></span>
+        <div>
+          <strong>Service layer</strong>
+          <small>HTTP/JSON simulado localmente</small>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div>
+          <h1 id="pageTitle">Dashboard</h1>
+          <p id="pageSubtitle">Resumen de tu actividad gamer.</p>
+        </div>
+        <div class="top-actions">
+          <button id="resetDemo" class="ghost">Restaurar demo</button>
+          <div class="avatar">DM</div>
+        </div>
+      </header>
+
+      <section id="view"></section>
+    </main>
+  </div>
+
+  <template id="gameCardTemplate">
+    <article class="game-card">
+      <div class="cover"></div>
+      <div class="game-body">
+        <div class="game-meta"></div>
+        <h3></h3>
+        <p class="game-description"></p>
+        <div class="actions"></div>
+      </div>
+    </article>
+  </template>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
